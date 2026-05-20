@@ -18,10 +18,10 @@ body{
     background:
     linear-gradient(
         135deg,
-        #fdfbff 0%,
-        #f5f7ff 30%,
-        #eef3ff 65%,
-        #f7f9fc 100%
+         #faf5ff 0%,
+         #f3e8ff 35%,
+         #ede9fe 70%,
+         #f5f3ff 100%
     );
 
     color:#1e293b;
