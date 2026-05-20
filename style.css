@@ -18,9 +18,10 @@ body{
     background:
     linear-gradient(
         135deg,
-        #eef4ff 0%,
-        #f8fbff 45%,
-        #e8eef7 100%
+        #fdfbff 0%,
+        #f5f7ff 30%,
+        #eef3ff 65%,
+        #f7f9fc 100%
     );
 
     color:#1e293b;
@@ -31,7 +32,7 @@ body{
 }
 
 /* =====================================================
-   SOFT PREMIUM BACKGROUND
+   PASTEL PREMIUM BACKGROUND
 ===================================================== */
 
 body::before{
@@ -44,14 +45,26 @@ body::before{
 
     radial-gradient(
         circle at top right,
-        rgba(59,130,246,0.08),
-        transparent 20%
+        rgba(167,139,250,0.14),
+        transparent 24%
+    ),
+
+    radial-gradient(
+        circle at top left,
+        rgba(96,165,250,0.10),
+        transparent 22%
     ),
 
     radial-gradient(
         circle at bottom left,
-        rgba(14,165,233,0.06),
-        transparent 25%
+        rgba(251,191,36,0.08),
+        transparent 26%
+    ),
+
+    radial-gradient(
+        circle at bottom right,
+        rgba(45,212,191,0.08),
+        transparent 24%
     );
 
     z-index:-2;
@@ -64,10 +77,18 @@ body::after{
     inset:0;
 
     background-image:
-    linear-gradient(rgba(0,0,0,0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0,0,0,0.025) 1px, transparent 1px);
+    linear-gradient(
+        rgba(15,23,42,0.022) 1px,
+        transparent 1px
+    ),
 
-    background-size:44px 44px;
+    linear-gradient(
+        90deg,
+        rgba(15,23,42,0.022) 1px,
+        transparent 1px
+    );
+
+    background-size:48px 48px;
 
     z-index:-1;
 }
@@ -89,11 +110,11 @@ nav{
 
     padding:20px 7%;
 
-    background:rgba(255,255,255,0.75);
+    background:rgba(255,255,255,0.58);
 
-    backdrop-filter:blur(14px);
+    backdrop-filter:blur(16px);
 
-    border-bottom:1px solid rgba(0,0,0,0.05);
+    border-bottom:1px solid rgba(255,255,255,0.25);
 
     z-index:1000;
 }
@@ -105,11 +126,12 @@ nav{
 
     font-weight:800;
 
-    color:#1e3a8a;
+    color:#4338ca;
 }
 
 .nav-links{
     display:flex;
+
     gap:30px;
 }
 
@@ -124,7 +146,7 @@ nav{
 }
 
 .nav-links a:hover{
-    color:#2563eb;
+    color:#6366f1;
 }
 
 /* =====================================================
@@ -148,8 +170,8 @@ nav{
 
     background:
     linear-gradient(
-        rgba(255,255,255,0.85),
-        rgba(255,255,255,0.88)
+        rgba(255,255,255,0.72),
+        rgba(255,255,255,0.82)
     ),
 
     url('https://images.unsplash.com/photo-1544016768-982d1554f0b9?q=80&w=1800&auto=format&fit=crop');
@@ -157,7 +179,7 @@ nav{
     background-size:cover;
     background-position:center;
 
-    opacity:0.18;
+    opacity:0.14;
 
     z-index:-1;
 }
@@ -177,7 +199,7 @@ nav{
 }
 
 .hero-tag{
-    color:#2563eb;
+    color:#6366f1;
 
     font-size:12px;
 
@@ -218,7 +240,9 @@ nav{
     max-width:700px;
 }
 
-/* BUTTONS */
+/* =====================================================
+   BUTTONS
+===================================================== */
 
 .hero-buttons{
     display:flex;
@@ -242,15 +266,20 @@ nav{
 }
 
 .btn-primary{
-    background:#1e3a8a;
+    background:#6366f1;
 
     color:white;
+
+    box-shadow:
+    0 10px 25px rgba(99,102,241,0.25);
 }
 
 .btn-secondary{
-    border:1px solid #1e3a8a;
+    border:1px solid #6366f1;
 
-    color:#1e3a8a;
+    color:#6366f1;
+
+    background:rgba(255,255,255,0.5);
 }
 
 .btn-primary:hover,
@@ -258,7 +287,9 @@ nav{
     transform:translateY(-4px);
 }
 
-/* STATS */
+/* =====================================================
+   STATS
+===================================================== */
 
 .hero-stats{
     display:flex;
@@ -269,7 +300,9 @@ nav{
 }
 
 .stat-card{
-    background:white;
+    background:rgba(255,255,255,0.72);
+
+    backdrop-filter:blur(16px);
 
     border-radius:20px;
 
@@ -277,12 +310,14 @@ nav{
 
     min-width:170px;
 
+    border:1px solid rgba(255,255,255,0.25);
+
     box-shadow:
-    0 10px 30px rgba(0,0,0,0.06);
+    0 10px 30px rgba(0,0,0,0.05);
 }
 
 .stat-card h3{
-    color:#1e3a8a;
+    color:#4338ca;
 
     margin-bottom:8px;
 
@@ -293,7 +328,9 @@ nav{
     color:#64748b;
 }
 
-/* RIGHT */
+/* =====================================================
+   RIGHT SECTION
+===================================================== */
 
 .hero-right{
     display:flex;
@@ -306,14 +343,18 @@ nav{
 .profile-card{
     width:320px;
 
-    background:white;
+    background:rgba(255,255,255,0.72);
+
+    backdrop-filter:blur(16px);
 
     padding:14px;
 
     border-radius:28px;
 
+    border:1px solid rgba(255,255,255,0.25);
+
     box-shadow:
-    0 20px 40px rgba(0,0,0,0.08);
+    0 20px 40px rgba(0,0,0,0.06);
 }
 
 .profile-card img{
@@ -331,20 +372,24 @@ nav{
 .focus-card{
     width:320px;
 
-    background:white;
+    background:rgba(255,255,255,0.72);
+
+    backdrop-filter:blur(16px);
 
     padding:24px;
 
     border-radius:24px;
 
+    border:1px solid rgba(255,255,255,0.25);
+
     box-shadow:
-    0 15px 30px rgba(0,0,0,0.06);
+    0 15px 30px rgba(0,0,0,0.05);
 }
 
 .focus-card h3{
     margin-bottom:18px;
 
-    color:#1e3a8a;
+    color:#4338ca;
 }
 
 .focus-card ul{
@@ -383,22 +428,30 @@ section{
     color:#64748b;
 }
 
-/* CARDS */
+/* =====================================================
+   GLASS CARDS
+===================================================== */
 
 .glass-card,
 .skill-card,
 .cert-card,
 .timeline-content,
 .contact-card{
-    background:white;
+    background:rgba(255,255,255,0.72);
+
+    backdrop-filter:blur(16px);
 
     border-radius:24px;
+
+    border:1px solid rgba(255,255,255,0.25);
 
     box-shadow:
     0 15px 30px rgba(0,0,0,0.05);
 }
 
-/* ABOUT */
+/* =====================================================
+   ABOUT
+===================================================== */
 
 .about-grid{
     display:grid;
@@ -419,15 +472,17 @@ section{
 }
 
 .info-item h4{
-    color:#1e3a8a;
+    color:#4338ca;
 
     margin-bottom:6px;
 }
 
-/* TIMELINE */
+/* =====================================================
+   TIMELINE
+===================================================== */
 
 .timeline{
-    border-left:2px solid rgba(30,58,138,0.12);
+    border-left:2px solid rgba(99,102,241,0.18);
 
     padding-left:28px;
 }
@@ -442,7 +497,7 @@ section{
     width:16px;
     height:16px;
 
-    background:#1e3a8a;
+    background:#6366f1;
 
     border-radius:50%;
 
@@ -459,14 +514,16 @@ section{
 .timeline-content h3{
     margin-bottom:12px;
 
-    color:#1e3a8a;
+    color:#4338ca;
 }
 
 .timeline-content span{
     color:#64748b;
 }
 
-/* SKILLS */
+/* =====================================================
+   SKILLS & CERTIFICATIONS
+===================================================== */
 
 .skills-grid,
 .cert-grid{
@@ -485,7 +542,7 @@ section{
 
 .skill-card h3,
 .cert-card h3{
-    color:#1e3a8a;
+    color:#4338ca;
 
     margin-bottom:16px;
 }
@@ -498,7 +555,9 @@ section{
     margin-bottom:10px;
 }
 
-/* CONTACT */
+/* =====================================================
+   CONTACT
+===================================================== */
 
 .contact-card{
     padding:32px;
@@ -509,12 +568,14 @@ section{
 }
 
 .contact-item h4{
-    color:#1e3a8a;
+    color:#4338ca;
 
     margin-bottom:6px;
 }
 
-/* FOOTER */
+/* =====================================================
+   FOOTER
+===================================================== */
 
 footer{
     padding:32px;
