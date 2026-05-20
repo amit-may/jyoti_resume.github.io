@@ -1,12 +1,26 @@
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
 body{
     font-family:'Inter',sans-serif;
 
     background:
     linear-gradient(
         135deg,
-        #edf4ff 0%,
-        #f6f9ff 40%,
-        #e7eef8 100%
+        #eef4ff 0%,
+        #f8fbff 45%,
+        #e8eef7 100%
     );
 
     color:#1e293b;
@@ -16,7 +30,9 @@ body{
     line-height:1.7;
 }
 
-/* SOFT PREMIUM BACKGROUND */
+/* =====================================================
+   SOFT PREMIUM BACKGROUND
+===================================================== */
 
 body::before{
     content:'';
@@ -29,19 +45,13 @@ body::before{
     radial-gradient(
         circle at top right,
         rgba(59,130,246,0.08),
-        transparent 22%
+        transparent 20%
     ),
 
     radial-gradient(
         circle at bottom left,
         rgba(14,165,233,0.06),
         transparent 25%
-    ),
-
-    radial-gradient(
-        circle at center,
-        rgba(168,85,247,0.04),
-        transparent 40%
     );
 
     z-index:-2;
@@ -57,12 +67,14 @@ body::after{
     linear-gradient(rgba(0,0,0,0.025) 1px, transparent 1px),
     linear-gradient(90deg, rgba(0,0,0,0.025) 1px, transparent 1px);
 
-    background-size:42px 42px;
+    background-size:44px 44px;
 
     z-index:-1;
 }
 
-/* NAVBAR */
+/* =====================================================
+   NAVBAR
+===================================================== */
 
 nav{
     position:fixed;
@@ -77,7 +89,7 @@ nav{
 
     padding:20px 7%;
 
-    background:rgba(255,255,255,0.72);
+    background:rgba(255,255,255,0.75);
 
     backdrop-filter:blur(14px);
 
@@ -87,13 +99,13 @@ nav{
 }
 
 .logo{
-    font-family:'Orbitron',sans-serif;
+    font-family:'Montserrat',sans-serif;
 
     font-size:24px;
 
-    color:#2563eb;
+    font-weight:800;
 
-    font-weight:700;
+    color:#1e3a8a;
 }
 
 .nav-links{
@@ -106,6 +118,8 @@ nav{
 
     color:#334155;
 
+    font-weight:500;
+
     transition:0.3s ease;
 }
 
@@ -113,7 +127,9 @@ nav{
     color:#2563eb;
 }
 
-/* HERO */
+/* =====================================================
+   HERO
+===================================================== */
 
 .hero{
     min-height:100vh;
@@ -122,6 +138,28 @@ nav{
     align-items:center;
 
     padding:130px 7% 80px;
+
+    position:relative;
+}
+
+.hero-overlay{
+    position:absolute;
+    inset:0;
+
+    background:
+    linear-gradient(
+        rgba(255,255,255,0.85),
+        rgba(255,255,255,0.88)
+    ),
+
+    url('https://images.unsplash.com/photo-1544016768-982d1554f0b9?q=80&w=1800&auto=format&fit=crop');
+
+    background-size:cover;
+    background-position:center;
+
+    opacity:0.18;
+
+    z-index:-1;
 }
 
 .hero-container{
@@ -151,19 +189,15 @@ nav{
 }
 
 .hero h1{
-    font-size:68px;
+    font-size:60px;
 
-    line-height:1;
+    line-height:1.1;
 
-    margin-bottom:18px;
+    margin-bottom:20px;
 
-    font-family:'Orbitron',sans-serif;
+    font-family:'Montserrat',sans-serif;
 
     color:#0f172a;
-}
-
-.hero h1 span{
-    color:#2563eb;
 }
 
 .hero h2{
@@ -171,28 +205,32 @@ nav{
 
     margin-bottom:24px;
 
-    color:#1e293b;
+    color:#334155;
 }
 
 .hero p{
     color:#475569;
 
-    font-size:16px;
+    font-size:17px;
 
     margin-bottom:34px;
+
+    max-width:700px;
 }
 
 /* BUTTONS */
 
 .hero-buttons{
     display:flex;
+
     gap:16px;
+
     margin-bottom:36px;
 }
 
 .btn-primary,
 .btn-secondary{
-    padding:14px 24px;
+    padding:14px 26px;
 
     border-radius:12px;
 
@@ -204,13 +242,15 @@ nav{
 }
 
 .btn-primary{
-    background:#2563eb;
+    background:#1e3a8a;
+
     color:white;
 }
 
 .btn-secondary{
-    border:1px solid #2563eb;
-    color:#2563eb;
+    border:1px solid #1e3a8a;
+
+    color:#1e3a8a;
 }
 
 .btn-primary:hover,
@@ -222,62 +262,330 @@ nav{
 
 .hero-stats{
     display:flex;
-    gap:16px;
+
+    gap:18px;
+
     flex-wrap:wrap;
 }
 
 .stat-card{
-    background:rgba(255,255,255,0.7);
+    background:white;
 
-    backdrop-filter:blur(14px);
+    border-radius:20px;
 
-    border-radius:18px;
+    padding:22px;
 
-    padding:18px 22px;
-
-    min-width:150px;
-
-    border:1px solid rgba(0,0,0,0.05);
+    min-width:170px;
 
     box-shadow:
-    0 10px 30px rgba(0,0,0,0.05);
+    0 10px 30px rgba(0,0,0,0.06);
 }
 
 .stat-card h3{
-    color:#2563eb;
+    color:#1e3a8a;
+
+    margin-bottom:8px;
+
+    font-size:30px;
 }
 
-/* PROFILE */
+.stat-card span{
+    color:#64748b;
+}
 
-.hero-image-section{
+/* RIGHT */
+
+.hero-right{
     display:flex;
+
     flex-direction:column;
-    gap:20px;
+
+    gap:24px;
 }
 
 .profile-card{
-    width:300px;
+    width:320px;
+
+    background:white;
 
     padding:14px;
 
-    background:rgba(255,255,255,0.75);
-
-    backdrop-filter:blur(14px);
-
     border-radius:28px;
 
-    border:1px solid rgba(0,0,0,0.05);
-
     box-shadow:
-    0 15px 40px rgba(0,0,0,0.06);
+    0 20px 40px rgba(0,0,0,0.08);
 }
 
 .profile-card img{
     width:100%;
 
-    height:360px;
+    height:380px;
 
     object-fit:cover;
 
+    object-position:center top;
+
     border-radius:18px;
+}
+
+.focus-card{
+    width:320px;
+
+    background:white;
+
+    padding:24px;
+
+    border-radius:24px;
+
+    box-shadow:
+    0 15px 30px rgba(0,0,0,0.06);
+}
+
+.focus-card h3{
+    margin-bottom:18px;
+
+    color:#1e3a8a;
+}
+
+.focus-card ul{
+    padding-left:18px;
+}
+
+.focus-card li{
+    margin-bottom:12px;
+
+    color:#475569;
+}
+
+/* =====================================================
+   COMMON
+===================================================== */
+
+section{
+    padding:90px 7%;
+}
+
+.section-title{
+    margin-bottom:44px;
+}
+
+.section-title h2{
+    font-size:42px;
+
+    margin-bottom:12px;
+
+    color:#0f172a;
+
+    font-family:'Montserrat',sans-serif;
+}
+
+.section-title p{
+    color:#64748b;
+}
+
+/* CARDS */
+
+.glass-card,
+.skill-card,
+.cert-card,
+.timeline-content,
+.contact-card{
+    background:white;
+
+    border-radius:24px;
+
+    box-shadow:
+    0 15px 30px rgba(0,0,0,0.05);
+}
+
+/* ABOUT */
+
+.about-grid{
+    display:grid;
+
+    grid-template-columns:
+    2fr
+    1fr;
+
+    gap:24px;
+}
+
+.glass-card{
+    padding:32px;
+}
+
+.info-item{
+    margin-bottom:22px;
+}
+
+.info-item h4{
+    color:#1e3a8a;
+
+    margin-bottom:6px;
+}
+
+/* TIMELINE */
+
+.timeline{
+    border-left:2px solid rgba(30,58,138,0.12);
+
+    padding-left:28px;
+}
+
+.timeline-item{
+    position:relative;
+
+    margin-bottom:40px;
+}
+
+.timeline-dot{
+    width:16px;
+    height:16px;
+
+    background:#1e3a8a;
+
+    border-radius:50%;
+
+    position:absolute;
+
+    left:-37px;
+    top:10px;
+}
+
+.timeline-content{
+    padding:30px;
+}
+
+.timeline-content h3{
+    margin-bottom:12px;
+
+    color:#1e3a8a;
+}
+
+.timeline-content span{
+    color:#64748b;
+}
+
+/* SKILLS */
+
+.skills-grid,
+.cert-grid{
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(240px,1fr));
+
+    gap:24px;
+}
+
+.skill-card,
+.cert-card{
+    padding:28px;
+}
+
+.skill-card h3,
+.cert-card h3{
+    color:#1e3a8a;
+
+    margin-bottom:16px;
+}
+
+.skill-card ul{
+    padding-left:18px;
+}
+
+.skill-card li{
+    margin-bottom:10px;
+}
+
+/* CONTACT */
+
+.contact-card{
+    padding:32px;
+}
+
+.contact-item{
+    margin-bottom:20px;
+}
+
+.contact-item h4{
+    color:#1e3a8a;
+
+    margin-bottom:6px;
+}
+
+/* FOOTER */
+
+footer{
+    padding:32px;
+
+    text-align:center;
+
+    color:#64748b;
+
+    border-top:1px solid rgba(0,0,0,0.05);
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:1000px){
+
+.hero-container,
+.about-grid{
+    grid-template-columns:1fr;
+}
+
+.hero{
+    text-align:center;
+}
+
+.hero-buttons,
+.hero-stats{
+    justify-content:center;
+}
+
+.hero-right{
+    align-items:center;
+}
+
+.nav-links{
+    display:none;
+}
+
+.hero h1{
+    font-size:44px;
+}
+
+}
+
+@media(max-width:600px){
+
+.hero{
+    padding-top:110px;
+}
+
+.hero h1{
+    font-size:34px;
+}
+
+.hero-buttons{
+    flex-direction:column;
+}
+
+.profile-card,
+.focus-card{
+    width:100%;
+    max-width:280px;
+}
+
+.profile-card img{
+    height:320px;
+}
+
+.section-title h2{
+    font-size:32px;
+}
+
 }
